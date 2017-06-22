@@ -1,6 +1,7 @@
 5.times do
   User.create!(
-  username: Faker::LordOfTheRings.character
+  username: Faker::LordOfTheRings.character,
+  password: Faker::Crypto.md5
   )
 end
 users = User.all

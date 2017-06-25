@@ -12,7 +12,7 @@ class Api::ItemsController < ApiController
   end
 
   private
-   def list_params
+   def item_params
      params.require(:item).permit(:item)
    end
 

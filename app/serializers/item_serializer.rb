@@ -1,6 +1,6 @@
 class ItemSerializer < ActiveModel::Serializer
   belongs_to :list
-  attributes :id, :item, :list
+  attributes :id, :item, :list, :complete
 
   def item
     object.item
@@ -9,4 +9,9 @@ class ItemSerializer < ActiveModel::Serializer
   def list
     object.list.name
   end
+
+  def complete
+    object.complete?
+  end
+  
 end

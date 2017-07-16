@@ -27,6 +27,10 @@ gem 'rack-cors'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'json'
+gem 'devise'
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

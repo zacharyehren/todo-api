@@ -28,6 +28,7 @@ gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'json'
 gem 'devise'
+gem 'bcrypt'
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end

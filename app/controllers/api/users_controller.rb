@@ -1,6 +1,27 @@
 class Api::UsersController < ApiController
 
-  # before_action :authenticated?
+  #before_action :authenticated?
+
+  def authenticate
+    puts params[:username]
+    puts params[:password]
+
+    user = User.find_by_username(params[:username])
+    puts "user:"
+    puts user
+    if user.nil?
+      puts "User is nil"
+      render json: "User not found with #{params[:username]}", status: :not_found
+    else
+      if user.authenticate(params[:password])
+        render json: user, status: :ok
+      else
+        puts "Bad password"
+
+        render json: "Password was incorrect!", status: :not_found
+      end
+    end
+  end
 
   def index
     @users = User.all

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-
   namespace :api, defaults: { format: :json } do
-        resources :users do
+     resources :users do
        resources :lists
      end
 
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
    end
 
    resources :items, only: [:destroy]
+   match 'users/authenticate' => 'users#authenticate', via: :post
 
  end
 end

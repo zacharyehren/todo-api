@@ -1,8 +1,9 @@
 class Api::ListsController < ApiController
 
   def index
-    @lists = List.all
-    render json: @lists, each_serializer: ListSerializer
+    user = User.find(params[:user_id])
+    lists = List.all
+    render json: user.lists, each_serializer: ListSerializer
   end
 
   def create
